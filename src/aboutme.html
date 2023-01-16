@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <title>About me</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(ellipse at bottom, #0D1E31, #111);
+            overflow: hidden;
+        }
+
+        .night {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform: rotateZ(40deg);
+        }
+
+        .stars {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            height: 4px;
+            background: linear-gradient(-45deg, #5F91FF, rgba(0, 0, 255, 0));
+            border-radius: 999px; 
+            filter: drop-shadow(0, 0, 6px #699BFF);
+            animation: tail 3s ease-in-out infinite,
+                       falling 3s ease-in-out infinite;
+        }
+
+        @keyframes tail {
+            0% {
+                width: 0;
+            }
+            30% {
+                width: 100px;
+            }
+            100% {
+                width: 0;
+            }
+        }
+
+        @keyframes falling {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(300px);
+            }
+        }
+
+        .stars::before, .star::after {
+            content: '';
+            position: absolute;
+            top: calc(50% - 2px);
+            right: 0;
+            width: 4px;
+            background: linear-gradient
+            (-45deg, rgba(0, 0, 255, 0), 
+           #5F91FF rgba(0, 0, 255, 0));
+           border-radius: 999px;
+           transform: translateX(50%) rotateZ(45deg);
+           animation: shining 3s ease-in-out infinite;
+        }
+
+        @keyframes shining {
+            0% {
+                height: 0;
+            }
+            50% {
+                height: 30px;
+            }
+            100% {
+                width: 0;
+            }
+        }
+
+        .stars::after {
+            transform: translateX(50%)
+            rotateZ(-45deg);
+        }
+
+        .stars:nth-child(1) {
+            top: calc(50% - 100px);
+            left: calc(70% - 150px);
+            animation-delay: 1s;
+        }
+
+        .stars:nth-child(1)::before,
+        .stars:nth-child(1)::after {
+            animation-delay: 1s;
+        }
+
+        .stars:nth-child(2) {
+            top: calc(50% - 50px);
+            left: calc(30% - 200px);
+            animation-delay: 1.2s;
+        }
+
+        .stars:nth-child(2)::before,
+        .stars:nth-child(2)::after {
+            animation-delay: 1.2s;
+        }
+
+        .stars:nth-child(3) {
+            top: calc(50% - 0px);
+            left: calc(50% - 150px);
+            animation-delay: 1.4s;
+        }
+
+        .stars:nth-child(3)::before,
+        .stars:nth-child(3)::after {
+            animation-delay: 1.4s;
+        }
+
+        .stars:nth-child(4) {
+            top: calc(50% - 50px);
+            left: calc(50% - 200px);
+            animation-delay: 1.6s;
+        }
+
+        .stars:nth-child(4)::before,
+        .stars:nth-child(4)::after {
+            animation-delay: 1.6s;
+        }
+
+        .stars:nth-child(5) {
+            top: calc(50% - 100px);
+            left: calc(50% - 250px);
+            animation-delay: 1.8s;
+        }
+
+        .stars:nth-child(5)::before,
+        .stars:nth-child(5)::after {
+            animation-delay: 1.8s;
+        }
+
+        header {
+            position: relative;
+            z-index: 1;
+            font-family: 'Orbitron', sans-serif;
+            color: #fff;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 4em;
+            text-shadow: 0 0 10px #fff;
+        }
+
+        header h1 {
+            color: #f35626;
+            background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-animation: hue 10s infinite linear;
+        }
+
+        @-webkit-keyframes hue {
+            0% {
+                -webkit-filter: hue-rotate(0deg);
+            }
+            100% {
+                -webkit-filter: hue-rotate(360deg);
+            }
+        }
+
+        header h1:hover {
+            text-shadow: 0 0 20px #fff;
+        }
+
+        header p { 
+            font-size: 0.25em;
+            margin: 0;
+            padding: 0;
+            text-shadow: 0 0 10px #fff;
+        }
+
+        .clickme {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        .clickme button {
+            background: #fff;
+            border: 0;
+            padding: 10px 20px;
+            color: #000;
+            font-size: 1.5em;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: 0.5s;
+            margin-top: 150%;
+        }
+
+        .clickme button:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        .clickme a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About me</h1>
+        <p>
+            HTML | CSS | JavaScript | WebGL
+        </p>
+    </header>
+    <div class="night">
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+    </div>
+    <div class="clickme">
+        <a href="./mystory.html"><button>Learn about me</button></a>
+    </div>
+</body>
+</html>

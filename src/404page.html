@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Pagina | Lost in space</title>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Dosis:300,400,500');
+
+@-moz-keyframes rocket-movement { 100% { -moz-transform: translate(1200px, -600px);}}
+@-webkit-keyframes rocket-movement { 100% {-webkit-transform: translate(1200px, -600px);}}
+@keyframes rocket-movement { 100% {transform: translate(1200px, -600px);}}
+@-moz-keyframes spin-earth { 100% {-moz-transform: rotate(-360deg);  transition: transform 20s;}}
+@-webkit-keyframes spin-earth { 100% {-webkit-transform: rotate(-360deg);  transition: transform 20s;}}
+@keyframes spin-earth { 100% { -webkit-transform: rotate(-360deg); transform: rotate(-360deg);}}
+
+@-moz-keyframes move-astronaut{ 
+    100% {
+        -moz-transform: translate(-160deg, -160deg);
+    }
+}
+@-webkit-keyframes move-astronaut {
+    100% {
+        -webkit-transform: translate(-160px, -160px);
+    }
+}
+
+@keyframes move-astronaut {
+    100% {
+        -webkit-transform: translate(-160px, -160px);
+        transform: translate(-160px, -160px);
+    }
+}
+
+@-moz-keyframes rotate-astronaut {
+    100% {
+        -moz-transform: rotate(-720deg);
+    }
+}
+
+@-webkit-keyframes rotate-astronaut {
+    100% {
+        -webkit-transform: rotate(-720deg);
+    }
+}
+
+@keyframes rotate-astronaut {
+    100% {
+        -webkit-transform: rotate(-720deg);
+        transform: rotate(-720deg);
+    }
+}
+
+@-moz-keyframes glow-star {
+    40% {
+        -moz-opacity: 0.3;
+    }
+    90%, 100% {
+        -moz-opacity: 1;
+        -moz-transform: scale(1.2);
+    }
+}
+
+@-webkit-keyframes glow-star {
+    40% {
+        -webkit-opacity: 0.3;
+    }
+    90%, 100% {
+        -webkit-opacity: 1;
+        -webkit-transform: scale(1.2);
+    }
+}
+
+    .spin-earth-on-hover {
+        transition: ease 200s !important;
+        transform: rotate(-360deg) !important;
+    }
+
+    html, body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        font-weight: 300;
+        font-family: 'Dosis', sans-serif;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .bg-purple {
+        background: url('http://salehriaz.com/404Page/img/bg_purple.png');
+        background-repeat: repeat-x;
+        background-size: cover;
+        background-position: left top;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .custom-navbar {
+        padding-top: 15px;
+    }
+
+    .brand-logo {
+        margin-left: 25px;
+        margin-top: 5px;
+        display: inline-block;
+    }
+
+    .navbar-links {
+        display: inline-block;
+        float: right;
+        margin-right: 15px;
+        text-transform: uppercase;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    li {
+        float: left;
+        padding: 0px 15px;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        letter-spacing: 2px;
+        font-size: 12px;
+        -webkit-transition:  all 0.3s ease-in;
+        -moz-transition:  all 0.3s ease-in;
+        -ms-transition:  all 0.3s ease-in;
+        -o-transition:  all 0.3s ease-in;
+        transition:  all 0.3s ease-in;
+    }
+
+    li a:hover {
+        color: #f1c40f;
+    }
+
+    .central-body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .central-body a {
+        text-decoration: none;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        font-size: 20px;
+        margin-top: 40px;
+        font-weight: 500;
+        border: #f1c40f;
+        border-style: solid;
+        padding: 12px 25px;
+        border-radius: 40px;
+        -webkit-transition:  all 0.3s ease-in;
+        -moz-transition:  all 0.3s ease-in;
+        -ms-transition:  all 0.3s ease-in;
+        -o-transition:  all 0.3s ease-in;
+        transition:  all 0.3s ease-in;
+    }
+
+    .central-body a:hover {
+        background: #f1c40f;
+        color: #fff;
+    }
+
+    .box_astronaut {
+        position: absolute;
+        animation: move-astronaut 25s infinite linear alternate;
+        transform-origin: 50% 50%;
+        -webkit-animation: move-astronaut 25s infinite linear alternate;
+        -moz-animation: move-astronaut 25s infinite linear alternate;
+        -ms-animation: move-astronaut 25s infinite linear alternate;
+        -o-animation: move-astronaut 25s infinite linear alternate;
+        margin-left: 70%;
+        margin-top: 20%;
+    }
+
+    .objects_moon {
+        position: absolute;
+        animation: rotate-moon 5s infinite linear;
+        transform-origin: 50% 50%;
+        -webkit-animation: rotate-moon 5s infinite linear;
+        -moz-animation: rotate-moon 5s infinite linear;
+        -ms-animation: rotate-moon 5s infinite linear;
+        -o-animation: rotate-moon 5s infinite linear;
+        margin-left: 70%;
+        margin-top: 20%;
+    }
+
+    .object_earth {
+        position: absolute;
+        animation: spin-earth 25s infinite linear;
+        -webkit-animation: spin-earth 25s infinite linear;
+        -moz-animation: spin-earth 25s infinite linear;
+        -ms-animation: spin-earth 25s infinite linear;
+        -o-animation: spin-earth 25s infinite linear;
+        left: 20%;
+        top: 15%;
+    }
+
+    .object_rocket {
+        position: absolute;
+        animation: move-rocket 2s infinite linear;
+        -webkit-animation: move-rocket 2s infinite linear;
+        -moz-animation: move-rocket 2s infinite linear;
+        -ms-animation: move-rocket 2s infinite linear;
+        -o-animation: move-rocket 2s infinite linear;
+        left: 80%;
+        top: 40%;
+    }
+</style>
+</head>
+<body class="bg-purple">
+    <div class="stars">
+        <div class="custom-navbar">
+            <div class="navbar-links">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./aboutme.html">About me</a></li>
+                    <li><a href="./internship.html">Internship</a></li>
+                    <li><a href="./portfolio.html">Portfolio</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="central-body">
+            <img class="image-404" src="https://salehriaz.com/404Page/img/404.svg" width="300px">
+            <a href="index.html" class="btn-go-home" target="_blank">GO BACK HOME</a>
+        </div>
+        <div class="objects">
+            <img class="object_rocket" src="https://salehriaz.com/404Page/img/rocket.svg" width="40px">
+            <div class="earth-moon">
+                <img class="object_earth" src="https://salehriaz.com/404Page/img/earth.svg" width="100px">
+                <img class="object_moon" src="https://salehriaz.com/404Page/img/moon.svg" width="80px">
+            </div>
+            <div class="box_astronaut">
+                <img class="object_astronaut" src="https://salehriaz.com/404Page/img/astronaut.svg" width="140px">
+            </div>
+        </div>
+        <div class="glowing_stars">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+        </div>
+    </div>
+</body>
+</html>
